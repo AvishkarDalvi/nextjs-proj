@@ -55,10 +55,10 @@ export async function getStaticProps() {
     client.close();
     return {
         props: {
-            meetups: meetups.meetups(meetup => ({
+            meetups: meetups.map(meetup => ({
                 title: meetup.title,
                 address: meetup.address,
-                image: meetup, image,
+                image: meetup.image,
                 id: meetup._id.toString()
             }))
         },
